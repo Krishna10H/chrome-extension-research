@@ -2,7 +2,7 @@
   "manifest_version": 3,
   // This is the mandatory Google standard. It ensures the extension is secure and fast.
 
-  "name": "BioShield: Offensive Attacker",
+  "name": "Trust me",
   // The name that appears in your Chrome Extension list.
 
   "version": "1.0",
